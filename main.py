@@ -10,6 +10,7 @@ actions = 0
 list_apm = []
 n = 5.0
 cancel_thread = False
+apm_av = 0
 
 #When a key is pressed
 def on_press(key):
@@ -44,26 +45,31 @@ def get_apm():
 		list_apm.append(apm)
 		actions = 0
 
-		print("\nAPM: " + str(apm) + "\n")
+		print("\nAPM: " + str(apm))
 	elif cancel_thread == True:
 		thread_apm.cancel()
 
-def average_apm():
-	global list_apm
+def apm_results():
+	global list_apm, apm_av
+	list_apm.remove(0)
+	length = len(list_apm)
+	add_apm = 0
 
 	for values in list_apm:
-		print(values)
+		add_apm += values
 
-# # Collect events until released
+	apm_av = add_apm / length
+
+	min_apm = str(min(list_apm))
+	max_apm = str(max(list_apm))
+	print("Min APM: " + min_apm)
+	print("Max APM: " + max_apm)
+	print(apm_av)
+
+# Collect events until released
 with MouseListener(on_click=on_click) as listener:
 	with KeyListener(on_press=on_press, on_release=on_release) as listener:
 		get_apm()
 		listener.join()
 
-list_apm.remove(0)
-min_apm = str(min(list_apm))
-max_apm = str(max(list_apm))
-print("Min APM: " + min_apm)
-print("Max APM: " + max_apm)
-
-average_apm()
+apm_results()
