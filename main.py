@@ -38,7 +38,10 @@ def get_apm():
 	global actions, cancel_thread, list_apm
 	#Every n seconds, calculate apm
 	thread_apm = threading.Timer(n, get_apm)
-	if cancel_thread == False:
+	if cancel_thread == True:
+		thread_apm.cancel()
+
+	elif cancel_thread == False:
 		thread_apm.start()
 
 		apm = actions
@@ -46,8 +49,6 @@ def get_apm():
 		actions = 0
 
 		print("\nAPM: " + str(apm))
-	elif cancel_thread == True:
-		thread_apm.cancel()
 
 def apm_results():
 	global list_apm, apm_av
