@@ -8,5 +8,5 @@ A basic python application that tracks your APM over the course of start and end
 
 # Learned
 - Basics of keylogging and listening
-- Creating a GUI with python
+- Created my first GUI application + in python
 - Creating an executable program
