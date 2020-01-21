@@ -11,7 +11,7 @@ actions = 0
 mouse_clicks = 0
 key_clicks = 0
 list_apm = []
-n = 4.0
+n = 60.0
 cancel_thread = False
 apm_av = 0
 length = len(list_apm)
@@ -57,15 +57,15 @@ def get_apm():
 
 def apm_results():
 	global list_apm, apm_av, mouse_clicks, key_clicks
-	list_apm.remove(0)
 	add_apm = 0
 
 	for values in list_apm:
 		add_apm += values
 
-	length = len(list_apm)
 	if length != 0:
-		apm_av = str(add_apm / length)
+		list_apm.remove(0)
+		length = len(list_apm)
+		apm_av = str(round(add_apm / length, 2))
 		min_apm = str(min(list_apm))
 		max_apm = str(max(list_apm))
 
