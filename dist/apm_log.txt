@@ -1,0 +1,9 @@
+
+====================
+January 22, 2020 Started: 18:24:08
+Total Key: 0 | Total Mouse: 17 | Total Clicks: 17
+Min APM: 3
+Max APM: 14
+Average APM: 8.5
+Minutes recorded: 2
+====================
