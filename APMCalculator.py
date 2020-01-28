@@ -124,11 +124,7 @@ def apm_results():
 		min_apm = str(min(list_apm))
 		max_apm = str(max(list_apm))
 
-		# print("\nTotal Key: " + str(key_clicks) + " | Total Mouse: " + str(mouse_clicks) + " | Total Actionss: " +  str(key_clicks + mouse_clicks))
-		# print("Min APM: " + min_apm)
-		# print("Max APM: " + max_apm)
-		# print("Average APM: " + apm_av)
-		# print("Minutes recorded: " + str(length))
+		#Easier to concatenate into one string rather than many print outs
 		a = "\nTotal Key: " + str(key_clicks) + " | Total Mouse: " + str(mouse_clicks) + " | Total Clicks: " + str(key_clicks + mouse_clicks)
 		b = "\nMin APM: " + min_apm
 		c = "\nMax APM: " + max_apm
@@ -166,6 +162,7 @@ def save_results(res):
 			f.write(res)
 			f.write('\n====================\n')
 
+#Future plans
 # def reset_values():
 # 	global lbl, actions, mouse_clicks, key_clicks, list_apm, cancel_program, apm_av, start_program
 # 	actions = 0
