@@ -14,7 +14,7 @@ from os import path
 from datetime import datetime
 
 #Global variables
-n = 4.0
+n = 60.0
 actions = 0
 mouse_clicks = 0
 key_clicks = 0
@@ -138,7 +138,7 @@ def apm_results():
 
 		lbl.config(text=result_string)
 
-		saveButton = Button(frame, text="Save", command=save_results(result_string))
+		saveButton = Button(frame, text="Save", command=lambda: save_results(result_string))
 		saveButton.pack(side=tk.LEFT, padx=10)
 		return False
 	else:
